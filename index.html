@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Harry's Skin Calm Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: one warm reading column; sections separate by background shifts (no hard lines); food lists sit side by side on desktop, stack on phone. Single warm theme by choice. */
+:root {
+  --cream: #FBF6F0;
+  --sand: #DECFC7;
+  --sand-soft: #EFE6DF;
+  --euc: #54605C;
+  --euc-deep: #3F4945;
+  --ink: #333333;
+  --head: #262626;
+  --muted: #6B6560;
+  --low: #E3E8E3;
+  --mid: #F1E7D6;
+  --high: #EBDDD8;
+  --display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --body: "Poppins", Arial, Helvetica, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16.5px;
+  line-height: 1.7;
+}
+img { max-width: 100%; display: block; }
+h1, h2, h3 { font-family: var(--display); color: var(--head); font-weight: 600; text-wrap: balance; line-height: 1.2; margin: 0; }
+h2 { font-size: clamp(1.75rem, 3.6vw, 2.4rem); }
+h3 { font-size: 1.3rem; }
+p { margin: 0; }
+a { color: var(--euc-deep); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--euc); outline-offset: 3px; border-radius: 6px; }
+em { font-style: italic; }
+
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+.read { max-width: 680px; }
+section { padding: 72px 0; }
+.stack { display: grid; gap: 18px; }
+.kicker { font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+
+/* Hero */
+.hero {
+  position: relative;
+  color: #fff;
+  background: var(--euc-deep);
+  overflow: hidden;
+  padding: 40px 0 72px;
+}
+.hero::before {
+  content: ""; position: absolute; inset: 0;
+  background: url("img/fern.jpg") center / cover no-repeat;
+  opacity: .22;
+}
+.hero::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(63,73,69,.35) 0%, rgba(63,73,69,.85) 100%);
+}
+.hero .wrap { position: relative; z-index: 1; }
+.logo { width: 220px; margin-bottom: 44px; }
+.hero h1 { color: #fff; font-size: clamp(2.3rem, 6vw, 3.6rem); font-weight: 400; max-width: 16ch; }
+.hero h1 em { font-weight: 400; }
+.hero p.lede { margin-top: 20px; font-size: 1.1rem; max-width: 56ch; color: rgba(255,255,255,.92); }
+.hero .dates { margin-top: 28px; display: inline-flex; gap: 10px; flex-wrap: wrap; }
+.pill {
+  display: inline-block; padding: 8px 18px; border-radius: 999px;
+  background: rgba(255,255,255,.14); color: #fff; font-size: .9rem; font-weight: 500;
+}
+
+/* Four pillars */
+.pillars { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 36px; }
+.pillar { background: #fff; border-radius: 18px; padding: 24px 22px; display: grid; gap: 8px; align-content: start; }
+.pillar .num { font-family: var(--display); font-size: 1.9rem; color: var(--euc); line-height: 1; }
+.pillar h3 { font-size: 1.15rem; }
+.pillar p { font-size: .95rem; }
+
+/* Timeline */
+.bg-sand { background: var(--sand-soft); }
+.weeks { display: grid; gap: 14px; margin-top: 32px; }
+.week { display: grid; grid-template-columns: 170px 1fr; gap: 20px; background: var(--cream); border-radius: 16px; padding: 20px 24px; }
+.week .when { font-weight: 600; color: var(--euc-deep); }
+.week .when span { display: block; font-weight: 400; color: var(--muted); font-size: .9rem; }
+.week.xmas { background: var(--euc); color: #fff; }
+.week.xmas .when, .week.xmas .when span { color: #fff; }
+
+/* Food */
+.rules { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
+.rule { background: #fff; border-radius: 16px; padding: 20px 22px; font-size: .95rem; }
+.rule strong { display: block; font-family: var(--display); font-size: 1.1rem; font-weight: 600; color: var(--head); margin-bottom: 4px; }
+.food { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 36px; align-items: start; }
+.tier { border-radius: 20px; padding: 26px 24px; display: grid; gap: 16px; }
+.tier.low { background: var(--low); }
+.tier.mid { background: var(--mid); }
+.tier.high { background: var(--high); }
+.tier header { display: grid; gap: 4px; }
+.tier .tag { font-size: .8rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--euc-deep); }
+.tier h3 { font-size: 1.45rem; }
+.tier .sub { font-size: .92rem; color: var(--muted); }
+.group h4 { margin: 0 0 6px; font-size: .88rem; font-weight: 600; color: var(--head); }
+.group ul { margin: 0; padding-left: 18px; font-size: .93rem; line-height: 1.6; }
+.group li { margin: 2px 0; }
+.note { font-size: .9rem; color: var(--muted); margin-top: 22px; max-width: 70ch; }
+
+/* Christmas table */
+.table2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 28px; }
+.plate { background: #fff; border-radius: 18px; padding: 24px; }
+.plate h3 { margin-bottom: 10px; }
+.plate ul { margin: 0; padding-left: 18px; }
+
+/* Light research */
+.bg-euc { background: var(--euc); color: #fff; }
+.bg-euc h2, .bg-euc h3 { color: #fff; }
+.bg-euc .kicker { color: rgba(255,255,255,.75); }
+.bg-euc a { color: #fff; }
+.facts { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+.fact { background: rgba(255,255,255,.09); border-radius: 18px; padding: 24px; display: grid; gap: 10px; align-content: start; }
+.fact .src { font-size: .82rem; color: rgba(255,255,255,.75); }
+.honest { background: rgba(255,255,255,.16); border-radius: 18px; padding: 24px; align-content: start; }
+.spec { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+.spec span { background: var(--sand-soft); color: var(--euc-deep); border-radius: 999px; padding: 6px 14px; font-size: .88rem; font-weight: 500; font-variant-numeric: tabular-nums; }
+
+/* Timetable */
+.times { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; }
+.time { background: var(--sand-soft); border-radius: 18px; padding: 24px; display: grid; gap: 14px; align-content: start; }
+.time.night { background: var(--euc); color: #fff; }
+.time.night h3, .time.night .what { color: #fff; }
+.time.night .how { color: rgba(255,255,255,.85); }
+.time h3 { font-size: 1.35rem; }
+.dose { display: grid; gap: 2px; }
+.dose .what { font-weight: 600; color: var(--head); }
+.dose .how { font-size: .92rem; color: var(--muted); }
+.studies.two { grid-template-columns: repeat(2, 1fr); }
+
+.together { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+.together > div { background: #fff; border-radius: 18px; padding: 24px; align-content: start; }
+
+/* More research */
+.studies { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 22px; }
+.study { background: #fff; border-radius: 18px; padding: 22px; display: grid; gap: 8px; align-content: start; }
+.study .size { font-size: .8rem; font-weight: 600; letter-spacing: .04em; color: var(--euc); font-variant-numeric: tabular-nums; }
+.study h4 { margin: 0; font-family: var(--display); font-size: 1.12rem; font-weight: 600; color: var(--head); line-height: 1.3; }
+.study p { font-size: .93rem; }
+.study .src { font-size: .8rem; color: var(--muted); }
+.group-title { margin-top: 44px; }
+.aside { background: var(--sand-soft); border-radius: 18px; padding: 22px 24px; margin-top: 28px; max-width: 760px; font-size: .95rem; }
+
+/* How to use + daily */
+.cols2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 28px; }
+.card { background: #fff; border-radius: 18px; padding: 26px; display: grid; gap: 12px; align-content: start; }
+.card ol, .card ul { margin: 0; padding-left: 20px; }
+.card li { margin: 4px 0; }
+
+/* Safety */
+.safety { background: var(--high); border-radius: 18px; padding: 26px; display: grid; gap: 10px; margin-top: 28px; }
+.safety ul { margin: 0; padding-left: 20px; }
+
+/* Sources + footer */
+.sources ol { padding-left: 20px; font-size: .88rem; color: var(--muted); display: grid; gap: 8px; margin: 18px 0 0; }
+footer { background: var(--euc-deep); color: rgba(255,255,255,.9); padding: 48px 0; }
+footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+footer .logo { width: 170px; margin: 0; }
+footer p { font-size: .9rem; max-width: 52ch; }
+.sign { font-family: var(--display); font-style: italic; font-size: 1.4rem; color: #fff; }
+
+@media (max-width: 900px) {
+  .pillars { grid-template-columns: repeat(3, 1fr); }
+  .studies { grid-template-columns: 1fr 1fr; }
+  .food, .rules { grid-template-columns: 1fr; }
+  .times { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  section { padding: 52px 0; }
+  .wrap { padding: 0 18px; }
+  .pillars, .facts, .table2, .cols2, .studies, .studies.two, .times, .together { grid-template-columns: 1fr; }
+  .week { grid-template-columns: 1fr; gap: 6px; }
+  .logo { width: 170px; margin-bottom: 32px; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <img class="logo" src="img/logo.png" alt="Peace of Eden Holistic Health">
+    <h1>Harry's skin calm plan, <em>all in one place</em></h1>
+    <p class="lede">Everything we talked about, so you can come back to it any time. A few simple steps working together for the next four weeks, so Harry's itch, redness and inflammation have the best chance to settle before Christmas.</p>
+    <div class="dates">
+      <span class="pill">Start: Saturday 21 November</span>
+      <span class="pill">Check in: Friday 18 December</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <div class="wrap">
+    <div class="read stack">
+      <p class="kicker">The plan</p>
+      <h2>Harry's daily plan</h2>
+      <p>Histamine is a chemical the body releases when it feels under attack. It drives itch, redness and swelling in the skin. This plan lowers histamine from every direction at once: less coming in from food, less being released, and more support for the skin and gut to repair.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <span class="num">1</span>
+        <h3>Low histamine food</h3>
+        <p>Use the food lists below for four weeks. Fresh food, cooked and eaten fresh.</p>
+      </div>
+      <div class="pillar">
+        <span class="num">2</span>
+        <h3>Zyrtec with dinner</h3>
+        <p>Every night with dinner, even on good skin days. It can make Harry a little sleepy, which helps him sleep through the night instead of scratching.</p>
+      </div>
+      <div class="pillar">
+        <span class="num">3</span>
+        <h3>Supplements</h3>
+        <p>Albizia Complex, Ultra Flora Kids Care and zinc. The full timetable is just below. A calmer gut helps the body handle histamine.</p>
+      </div>
+      <div class="pillar">
+        <span class="num">4</span>
+        <h3>Red light mask</h3>
+        <p>Red light for 20 minutes every night, plus blue light for 15 minutes every second night. The research is further down this page.</p>
+      </div>
+      <div class="pillar">
+        <span class="num">5</span>
+        <h3>Quick, cool showers</h3>
+        <p>Keep showers short and cool. No hot baths or long hot showers while the skin settles, as heat can set off the itch.</p>
+      </div>
+    </div>
+    <div class="read stack" id="supplements" style="margin-top:64px">
+      <p class="kicker">Supplements and medicine</p>
+      <h2>Harry's daily timetable</h2>
+      <p>Same times every day, even on good skin days. DAO Mini goes in just before each meal. Ultra Flora Kids Care can go in water, juice or whatever Harry likes, as long as it isn't a hot drink. Stick to low histamine juices like apple or mango, not orange.</p>
+    </div>
+    <div class="times">
+      <div class="time">
+        <h3>Breakfast</h3>
+        <div class="dose"><span class="what">DAO Mini</span><span class="how">1 capsule just before eating</span></div>
+        <div class="dose"><span class="what">Albizia Complex</span><span class="how">1 tablet</span></div>
+        <div class="dose"><span class="what">Ultra Flora Kids Care</span><span class="how">1 teaspoon in a drink</span></div>
+      </div>
+      <div class="time">
+        <h3>Lunch</h3>
+        <div class="dose"><span class="what">DAO Mini</span><span class="how">1 capsule just before eating</span></div>
+        <div class="dose"><span class="what">Albizia Complex</span><span class="how">1 tablet</span></div>
+      </div>
+      <div class="time night">
+        <h3>Dinner</h3>
+        <div class="dose"><span class="what">DAO Mini</span><span class="how">1 capsule just before eating</span></div>
+        <div class="dose"><span class="what">Albizia Complex</span><span class="how">1 tablet</span></div>
+        <div class="dose"><span class="what">Ultra Flora Kids Care</span><span class="how">1 teaspoon in a drink</span></div>
+        <div class="dose"><span class="what">Zinc</span><span class="how">25mg with dinner</span></div>
+        <div class="dose"><span class="what">Zyrtec</span><span class="how">1 dose with dinner, to help him sleep through the night</span></div>
+      </div>
+      <div class="time">
+        <h3>Bedtime</h3>
+        <div class="dose"><span class="what">Red light mask</span><span class="how">20 minutes every night</span></div>
+        <div class="dose"><span class="what">Blue light</span><span class="how">15 minutes every second night, after the red</span></div>
+      </div>
+    </div>
+    <div class="together">
+      <div class="stack">
+        <h3>How it all works together</h3>
+        <p>Between the supplements, the added antihistamine and fewer high histamine foods, Harry's body has much less histamine to deal with. At the same time, his gut gets the building blocks it needs to take up nutrients better and become less sensitive.</p>
+      </div>
+      <div class="stack">
+        <h3>About Ultra Flora Kids Care</h3>
+        <p>Made by Metagenics. It has three types of friendly gut bacteria: <em>Bifidobacterium lactis</em>, <em>Lactobacillus acidophilus</em> and <em>Lactobacillus rhamnosus</em>. It also has fructooligosaccharides (FOS), a natural plant fibre that feeds those good bacteria. Keep it in the fridge.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-sand">
+  <div class="wrap">
+    <div class="read stack">
+      <p class="kicker">Week by week</p>
+      <h2>What the next four weeks look like</h2>
+      <p>Skin renews itself slowly, so give it the full four weeks even if week one feels quiet.</p>
+    </div>
+    <div class="weeks">
+      <div class="week">
+        <div class="when">Week 1<span>21 to 27 Nov</span></div>
+        <p><em>Set up.</em> Clear the high histamine foods out of the fridge and pantry, order the mask, and start the Zyrtec and supplements. Start a simple daily note: what Harry ate, how the skin felt, how you slept.</p>
+      </div>
+      <div class="week">
+        <div class="when">Week 2<span>28 Nov to 4 Dec</span></div>
+        <p><em>Settle in.</em> This is the week the new routine starts to feel normal. Keep the mask going every night, and keep cooking fresh.</p>
+      </div>
+      <div class="week">
+        <div class="when">Week 3<span>5 to 11 Dec</span></div>
+        <p><em>Notice.</em> Look back over your notes. Is Harry sleeping better? Is the itch quieter at night? Are flares shorter or milder? Write down anything that still sets it off.</p>
+      </div>
+      <div class="week">
+        <div class="when">Week 4<span>12 to 18 Dec</span></div>
+        <p><em>Review.</em> Bring your notes to our check in, and we'll look at what's changed and plan the next step.</p>
+      </div>
+      <div class="week xmas">
+        <div class="when">From 19 Dec<span>Into Christmas</span></div>
+        <p>Start bringing foods back <em>one at a time</em>, with three days between each, so you can see exactly which ones cause a flare. Pick the food Harry would miss most on Christmas Day and test that one first. You may find only a few foods are a problem for him.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="food">
+  <div class="wrap">
+    <div class="read stack">
+      <p class="kicker">Food</p>
+      <h2>Low, medium and high histamine foods</h2>
+      <p>These lists follow the Swiss Interest Group Histamine Intolerance (SIGHI), the list most practitioners use. Freshness matters as much as the food itself: histamine builds up the longer protein foods sit.</p>
+    </div>
+
+    <div class="rules">
+      <div class="rule"><strong>Fresh is everything</strong>Buy meat and fish packed and dated, or frozen. Keep it cold the whole way home.</div>
+      <div class="rule"><strong>Freeze leftovers</strong>Let leftovers cool briefly, then freeze rather than keeping them in the fridge. Thaw quickly and eat straight away.</div>
+      <div class="rule"><strong>Read the label</strong>Watch for yeast extract, MSG (flavour enhancer 621), stock powder, vinegar and soy sauce in packaged food.</div>
+    </div>
+
+    <div class="food">
+      <article class="tier low">
+        <header>
+          <span class="tag">Low histamine</span>
+          <h3>Enjoy freely</h3>
+          <p class="sub">Build every meal from here.</p>
+        </header>
+        <div class="group"><h4>Protein</h4><ul>
+          <li>Fresh chicken, turkey, beef, lamb and pork, packed and dated or frozen</li>
+          <li>Eggs</li>
+          <li>Freshly caught or frozen white fish, like cod or trout</li>
+          <li>Plain cooked ham with no yeast extract or MSG</li>
+        </ul></div>
+        <div class="group"><h4>Dairy</h4><ul>
+          <li>Fresh milk, butter, cream</li>
+          <li>Fresh cheeses: mozzarella, ricotta, cottage cheese, cream cheese, mascarpone</li>
+          <li>Almond milk</li>
+        </ul></div>
+        <div class="group"><h4>Grains and starches</h4><ul>
+          <li>Rice, oats, quinoa, corn, pasta, bread</li>
+          <li>Potato, sweet potato</li>
+        </ul></div>
+        <div class="group"><h4>Vegetables</h4><ul>
+          <li>Almost all fresh or frozen vegetables: broccoli, zucchini, carrot, pumpkin, cucumber, lettuce, capsicum, cauliflower, onion</li>
+          <li>Fresh herbs and garlic</li>
+        </ul></div>
+        <div class="group"><h4>Fruit</h4><ul>
+          <li>Apple, mango, cherries, peach, apricot, melon, lychee</li>
+          <li>Blueberries, blackberries, cranberries</li>
+          <li>Coconut, coconut milk and water</li>
+        </ul></div>
+        <div class="group"><h4>Pantry and drinks</h4><ul>
+          <li>Olive oil and other plain oils</li>
+          <li>Macadamias, chestnuts</li>
+          <li>Salt, mild spices, apple cider vinegar, white vinegar</li>
+          <li>Honey, sugar, jam from the fruits above</li>
+          <li>Water, herbal teas, rooibos</li>
+        </ul></div>
+      </article>
+
+      <article class="tier mid">
+        <header>
+          <span class="tag">Medium</span>
+          <h3>Go gently</h3>
+          <p class="sub">Keep these small for four weeks, then test them first.</p>
+        </header>
+        <div class="group"><h4>Freshness risks</h4><ul>
+          <li>Leftovers kept in the fridge</li>
+          <li>Takeaway, café and restaurant meals</li>
+          <li>Pre-packed mince</li>
+          <li>Pre-cooked sausages</li>
+          <li>"Fresh" fish from the counter or a market</li>
+        </ul></div>
+        <div class="group"><h4>Dairy</h4><ul>
+          <li>Yoghurt, kefir, buttermilk</li>
+          <li>Sour cream, crème fraîche</li>
+          <li>Feta</li>
+        </ul></div>
+        <div class="group"><h4>Plants</h4><ul>
+          <li>Mushrooms</li>
+          <li>Green beans, peas</li>
+          <li>Any fruit that is overripe or bruised</li>
+          <li>Malt and wheat germ</li>
+        </ul></div>
+        <div class="group"><h4>Drinks and treats</h4><ul>
+          <li>Coffee, black tea, green tea</li>
+          <li>Oat milk, rice milk</li>
+          <li>White chocolate</li>
+        </ul></div>
+      </article>
+
+      <article class="tier high">
+        <header>
+          <span class="tag">High histamine</span>
+          <h3>Pause for now</h3>
+          <p class="sub">Leave these out completely for the four weeks.</p>
+        </header>
+        <div class="group"><h4>Meat and seafood</h4><ul>
+          <li>Salami, bacon, sausages, prosciutto, smoked or cured ham, cold cuts</li>
+          <li>Canned, smoked or marinated fish</li>
+          <li>Tuna, mackerel, sardines, anchovies</li>
+          <li>Prawns, mussels, crab, lobster and other shellfish</li>
+          <li>Liver and other offal</li>
+        </ul></div>
+        <div class="group"><h4>Cheese</h4><ul>
+          <li>Aged cheese: cheddar, parmesan, brie, camembert, blue, aged gouda, processed cheese</li>
+        </ul></div>
+        <div class="group"><h4>Fermented and preserved</h4><ul>
+          <li>Sauerkraut, kimchi, pickles, olives</li>
+          <li>Soy sauce, fish sauce, miso</li>
+          <li>Wine vinegar and balsamic</li>
+          <li>Vegemite and other yeast extracts, stock, broth, MSG</li>
+        </ul></div>
+        <div class="group"><h4>Vegetables and legumes</h4><ul>
+          <li>Tomato (including sauce, paste and ketchup), spinach, eggplant, avocado</li>
+          <li>Lentils, beans, soy and tofu</li>
+        </ul></div>
+        <div class="group"><h4>Fruit and nuts</h4><ul>
+          <li>Strawberries, raspberries</li>
+          <li>Oranges, lemons and other citrus</li>
+          <li>Banana, pineapple, kiwi, pears, papaya</li>
+          <li>Walnuts, cashews, peanuts</li>
+        </ul></div>
+        <div class="group"><h4>Drinks and treats</h4><ul>
+          <li>All alcohol, especially red wine, champagne and beer</li>
+          <li>Chocolate and cocoa</li>
+          <li>Energy drinks, mate tea, soy milk</li>
+          <li>Chilli, pepper, curry and other hot spices</li>
+        </ul></div>
+      </article>
+    </div>
+    <p class="note">Some foods on the high list are low in histamine themselves but make the body release its own (strawberries, citrus, chocolate, shellfish, tomato, alcohol). Others block the enzyme that clears histamine (alcohol, mate tea, energy drinks). Either way, they pause for now. Everyone is different, which is why we test foods back in one at a time.</p>
+  </div>
+</section>
+
+<section class="bg-sand">
+  <div class="wrap">
+    <div class="read stack">
+      <p class="kicker">Christmas Day</p>
+      <h2>A calm Christmas table</h2>
+      <p>Christmas lands just after the four weeks. You can still have a beautiful spread.</p>
+    </div>
+    <div class="table2">
+      <div class="plate">
+        <h3>Load up on</h3>
+        <ul>
+          <li>Roast turkey, chicken or lamb, cooked fresh on the day</li>
+          <li>Roast potatoes, pumpkin and greens</li>
+          <li>Cherries, mango, lychees, peaches and melon</li>
+          <li>Pavlova with cream and mango or blueberries</li>
+          <li>Sparkling water with fresh mint and cherries</li>
+        </ul>
+      </div>
+      <div class="plate">
+        <h3>Go easy on</h3>
+        <ul>
+          <li>Prawns and seafood platters</li>
+          <li>Smoked leg ham</li>
+          <li>Cheese boards and cured meats</li>
+          <li>Wine, champagne and beer</li>
+          <li>Chocolate, and strawberries or kiwi on the pav</li>
+          <li>Boxing Day leftovers (freeze them on Christmas night)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-euc" id="light">
+  <div class="wrap">
+    <div class="read stack">
+      <p class="kicker">Red and infrared light</p>
+      <h2>What the research says</h2>
+      <p>Red and near-infrared light therapy is also called photobiomodulation. The light is absorbed by the mitochondria, the parts of each cell that make energy. Here is what the studies show so far, in plain words.</p>
+    </div>
+    <div class="facts">
+      <div class="fact">
+        <h3>It calms inflammation</h3>
+        <p>A review from Harvard's Wellman Center for Photomedicine found that one of the most reliable effects of red and near-infrared light is an overall reduction in inflammation. It lowers inflammatory signals in cells that are already inflamed and boosts the body's own antioxidant defences.</p>
+        <p class="src">Hamblin, AIMS Biophysics, 2017 [1]</p>
+      </div>
+      <div class="fact">
+        <h3>It supports skin repair</h3>
+        <p>A review of red and near-infrared light for slow-healing skin wounds found it can help repair and reduce inflammation and pain. Near-infrared (800 to 830nm) was the most studied, followed by red (630 to 680nm).</p>
+        <p class="src">Yadav and Gupta, Photodermatology, Photoimmunology and Photomedicine, 2017 [2]</p>
+      </div>
+      <div class="fact">
+        <h3>It eased red, sensitive skin</h3>
+        <p>In a Seoul National University study, 28 people with sensitive, reactive skin had low-level light therapy. Every person improved, redness dropped measurably, and no side effects were reported. It took about 10 sessions on average.</p>
+        <p class="src">Choi and colleagues, Lasers in Medical Science, 2013 [3]</p>
+      </div>
+      <div class="fact">
+        <h3>Eczema itch and rash</h3>
+        <p>In a Japanese study of 112 people with eczema treated with low-level laser light, itch eased in 71% and the rash improved in 62%, with no side effects. It was an early study without a comparison group.</p>
+        <p class="src">Morita and colleagues, Keio Journal of Medicine, 1993 [4]</p>
+      </div>
+      <div class="fact">
+        <h3>Healing beyond the skin</h3>
+        <p>The same Harvard review reports reduced inflammation in joints, lungs, wounds, the brain and abdominal fat, mostly in animal studies. Australian researchers at the University of Newcastle and the University of Sydney describe light on one part of the body producing benefits in distant tissues, supported by many animal experiments and early human data.</p>
+        <p class="src">Hamblin 2017 [1]; Johnstone and Gordon, International Review of Neurobiology, 2026 [5]</p>
+      </div>
+      <div class="fact">
+        <h3>The mask we recommended</h3>
+        <p>The NursesChoice LED mask uses four lights. Harry uses the red and infrared setting every night, which sits right in the ranges studied above, and the blue setting every second night.</p>
+        <div class="spec"><span>Red 630nm</span><span>Infrared 850nm</span><span>Yellow 590nm</span><span>Blue 460nm</span></div>
+        <p><a href="https://nurseschoice.com.au/products/led-light-therapy-mask">View the mask at NursesChoice</a></p>
+      </div>
+      <div class="fact">
+        <h3>Why blue light too</h3>
+        <p>A University of Manchester review found blue light can calm inflammation and kill some bacteria. Skin conditions like eczema often have too much of certain bacteria on the skin, and blue light may help bring that balance back. In a 2025 study in mice, red and blue light together eased eczema.</p>
+        <p class="src">Serrage and colleagues, Frontiers in Cellular and Infection Microbiology, 2024 [17]; Zhang and colleagues, Photodermatology, Photoimmunology and Photomedicine, 2025 [18]</p>
+      </div>
+    <div class="honest stack">
+      <h3>The honest picture</h3>
+      <p>Research on light therapy for eczema is still small and early, and a 2023 review of LED studies found eczema results varied a lot between studies [6]. That's why we use the mask as gentle daily support alongside the food changes, Zyrtec, supplements and cool showers, and keep your GP in the loop.</p>
+      <p>More light is not better. Light works best at the right dose, and too much can blunt the effect [1], so stick to the recommended time.</p>
+      <p><a href="#healing">See more research on red light and healing</a></p>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section id="healing">
+  <div class="wrap">
+    <div class="read stack">
+      <p class="kicker">More research</p>
+      <h2>Red light and healing</h2>
+      <p>Red and near-infrared light has been studied for decades, in hospitals and research centres around the world. Here are some of the strongest studies on how it helps the body heal, on the skin and deeper inside.</p>
+    </div>
+
+    <h3 class="group-title">Healing the skin</h3>
+    <div class="studies">
+      <article class="study">
+        <span class="size">18 trials &middot; 670 wounds</span>
+        <h4>Wounds healed faster, with less pain</h4>
+        <p>A 2024 review by UK hospital doctors pooled 18 controlled trials. Wounds treated with low-level light shrank more, closed fully more often, and were less painful than untreated wounds.</p>
+        <p class="src">Taha and colleagues, Cureus, 2024 [7]</p>
+      </article>
+      <article class="study">
+        <span class="size">7 trials &middot; 194 people</span>
+        <h4>Slow-healing diabetic ulcers</h4>
+        <p>Diabetic foot ulcers are some of the hardest wounds to heal. Light therapy made them smaller and made full healing far more likely, with no side effects reported.</p>
+        <p class="src">Li and colleagues, Diabetes Research and Clinical Practice, 2018 [8]</p>
+      </article>
+      <article class="study">
+        <span class="size">99 trials &middot; 7,356 people</span>
+        <h4>Top ranked for shrinking ulcers</h4>
+        <p>A 2025 review compared 12 different treatments for diabetic foot ulcers. Low-level light therapy ranked first of all 12 for reducing the size of the ulcer.</p>
+        <p class="src">Hu and colleagues, PeerJ, 2025 [9]</p>
+      </article>
+      <article class="study">
+        <span class="size">136 people &middot; controlled trial</span>
+        <h4>Smoother skin and more collagen</h4>
+        <p>Red light twice a week for 30 sessions improved how the skin felt and looked, made it smoother, and increased collagen measured by ultrasound, compared with people who weren't treated.</p>
+        <p class="src">Wunsch and Matuschka, Photomedicine and Laser Surgery, 2014 [10]</p>
+      </article>
+      <article class="study">
+        <span class="size">7 studies &middot; 297 people</span>
+        <h4>Scars, including itchy scars</h4>
+        <p>Red light improved burn scars and softened surgical scars. Infrared light reduced scar thickness, pain and itch. Both were well tolerated.</p>
+        <p class="src">Gaumond and colleagues, Lasers in Medical Science, 2026 [11]</p>
+      </article>
+      <article class="study">
+        <span class="size">9 people &middot; early study</span>
+        <h4>Stubborn, inflamed psoriasis</h4>
+        <p>People whose psoriasis hadn't responded to usual treatments had red (633nm) and infrared (830nm) LED light, very close to the mask's two settings. Their skin cleared by 60 to 100%.</p>
+        <p class="src">Ablon, Photomedicine and Laser Surgery, 2010 [12]</p>
+      </article>
+    </div>
+
+    <h3 class="group-title">Healing deeper in the body</h3>
+    <div class="studies two">
+      <article class="study">
+        <span class="size">International guideline</span>
+        <h4>Recommended in cancer care</h4>
+        <p>The international cancer supportive care guidelines (MASCC/ISOO) recommend light therapy to prevent painful inflamed mouth sores during some cancer treatments. It is one of the few places light therapy is in official guidelines.</p>
+        <p class="src">Zadik and colleagues, Supportive Care in Cancer, 2019 [13]</p>
+      </article>
+      <article class="study">
+        <span class="size">22 trials &middot; 1,063 people</span>
+        <h4>Less knee pain from arthritis</h4>
+        <p>Compared with a fake (placebo) light, real light therapy reduced pain and disability in knee arthritis. Relief kept building for 2 to 4 weeks after treatment ended, with no side effects reported.</p>
+        <p class="src">Stausholm and colleagues, BMJ Open, 2019 [14]</p>
+      </article>
+      <article class="study">
+        <span class="size">16 trials &middot; 820 people</span>
+        <h4>Neck pain relief that lasted</h4>
+        <p>This review, led by a Sydney researcher and published in The Lancet, found light therapy reduced neck pain straight away, and for people with long-term neck pain the relief lasted up to 22 weeks.</p>
+        <p class="src">Chow and colleagues, The Lancet, 2009 [15]</p>
+      </article>
+      <article class="study">
+        <span class="size">4 trials &middot; 66 people</span>
+        <h4>Faster muscle recovery</h4>
+        <p>After hard exercise, light therapy did better than ice for getting strength back, easing soreness and lowering signs of muscle damage. The studies were small.</p>
+        <p class="src">Ferlito and colleagues, Lasers in Medical Science, 2022 [16]</p>
+      </article>
+    </div>
+
+    <div class="aside stack">
+      <p><em>A note on these studies.</em> Most used clinic devices aimed at the area being treated, so the mask works on the face and nowhere else. We share them to show how consistently the body responds to this light: calmer inflammation, less pain and faster repair. Many studies are small, and researchers are still working out the best doses.</p>
+    </div>
+  </div>
+</section>
+
+<section class="bg-sand">
+  <div class="wrap">
+    <div class="read stack">
+      <p class="kicker">Every day</p>
+      <h2>Using the mask, and Harry's daily rhythm</h2>
+    </div>
+    <div class="cols2">
+      <div class="card">
+        <h3>Using the mask</h3>
+        <ol>
+          <li>Start with a clean, dry face so the light can reach the skin.</li>
+          <li>Choose the red and infrared setting.</li>
+          <li>Red and infrared: 20 minutes every night.</li>
+          <li>Blue: 15 minutes every second night, straight after the red.</li>
+          <li>Same time each night, like before bed, so it becomes habit.</li>
+          <li>Harry keeps his eyes closed. Follow the safety guide in the box.</li>
+          <li>Moisturise afterwards.</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h3>Daily rhythm</h3>
+        <ul>
+          <li>Supplements at breakfast, lunch and dinner (see the timetable)</li>
+          <li>Zyrtec (1 dose) and zinc (25mg) with dinner</li>
+          <li>Short, cool showers, no hot baths</li>
+          <li>Red light 20 minutes every night, blue light 15 minutes every second night</li>
+          <li>Meals from the low histamine list, cooked fresh</li>
+          <li>Plenty of water</li>
+          <li>One line in the notes: food, skin, sleep</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="safety">
+      <h3>When to get help</h3>
+      <ul>
+        <li>Swelling of the lips, tongue or throat, or trouble breathing or swallowing: call 000.</li>
+        <li>Skin that is weeping, crusting yellow, very painful, or comes with a fever: see your GP the same day, as eczema can become infected.</li>
+        <li>Before starting the mask, check with your GP if Harry takes any medicine that makes skin sensitive to light, or has a condition triggered by light such as epilepsy.</li>
+      </ul>
+      <p>This plan supports the care from your GP and doesn't replace it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sources">
+  <div class="wrap"><div class="read">
+    <p class="kicker">Sources</p>
+    <ol>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/28748217/">Hamblin MR. Mechanisms and applications of the anti-inflammatory effects of photobiomodulation. AIMS Biophysics, 2017.</a></li>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/27943458/">Yadav A, Gupta A. Noninvasive red and near-infrared wavelength-induced photobiomodulation: promoting impaired cutaneous wound healing. Photodermatology, Photoimmunology and Photomedicine, 2017.</a></li>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/23397274/">Choi M et al. In vivo and in vitro analysis of low level light therapy: a useful therapeutic approach for sensitive skin. Lasers in Medical Science, 2013.</a></li>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/7907380/">Morita H et al. Clinical application of low reactive level laser therapy (LLLT) for atopic dermatitis. Keio Journal of Medicine, 1993.</a></li>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/42613146/">Johnstone DM, Gordon LC. Remote photobiomodulation: a systemic approach to neuroprotection. International Review of Neurobiology, 2026.</a></li>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/36310510/">Ngoc LTN et al. Utilization of light-emitting diodes for skin therapy: systematic review and meta-analysis. Photodermatology, Photoimmunology and Photomedicine, 2023.</a></li>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/39610644/">Taha N et al. The effects of low-level laser therapy on wound healing and pain management in skin wounds: a systematic review and meta-analysis. Cureus, 2024.</a></li>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/30009935/">Li S et al. Efficacy of low-level light therapy for treatment of diabetic foot ulcer: a systematic review and meta-analysis of randomized controlled trials. Diabetes Research and Clinical Practice, 2018.</a></li>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/40821981/">Hu X et al. Comparison of the efficacy of 12 interventions in the treatment of diabetic foot ulcers: a network meta-analysis. PeerJ, 2025.</a></li>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/24286286/">Wunsch A, Matuschka K. A controlled trial to determine the efficacy of red and near-infrared light treatment in patient satisfaction, reduction of fine lines, wrinkles, skin roughness, and intradermal collagen density increase. Photomedicine and Laser Surgery, 2014.</a></li>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/42026334/">Gaumond SI et al. Red and near-infrared photobiomodulation for burn, hypertrophic, and post-surgical scars: a scoping review of clinical trials. Lasers in Medical Science, 2026.</a></li>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/19764893/">Ablon G. Combination 830-nm and 633-nm light-emitting diode phototherapy shows promise in the treatment of recalcitrant psoriasis: preliminary findings. Photomedicine and Laser Surgery, 2010.</a></li>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/31286228/">Zadik Y et al. Systematic review of photobiomodulation for the management of oral mucositis in cancer patients and clinical practice guidelines. Supportive Care in Cancer, 2019.</a></li>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/31662383/">Stausholm MB et al. Efficacy of low-level laser therapy on pain and disability in knee osteoarthritis: systematic review and meta-analysis of randomised placebo-controlled trials. BMJ Open, 2019.</a></li>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/19913903/">Chow RT et al. Efficacy of low-level laser therapy in the management of neck pain: a systematic review and meta-analysis. The Lancet, 2009.</a></li>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/34669081/">Ferlito JV et al. Comparison between cryotherapy and photobiomodulation in muscle recovery: a systematic review and meta-analysis. Lasers in Medical Science, 2022.</a></li>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/38660491/">Serrage HJ et al. Illuminating microflora: shedding light on the potential of blue light to modulate the cutaneous microbiome. Frontiers in Cellular and Infection Microbiology, 2024.</a></li>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/41088531/">Zhang J et al. Red-blue light therapy mitigates atopic dermatitis via CD56bright NK cell modulation. Photodermatology, Photoimmunology and Photomedicine, 2025.</a></li>
+      <li><a href="https://www.histaminintoleranz.ch/en/downloads.html">Swiss Interest Group Histamine Intolerance (SIGHI). Histamine elimination diet leaflet, 2021.</a></li>
+    </ol>
+  </div></div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <img class="logo" src="img/logo.png" alt="Peace of Eden Holistic Health">
+    <div class="stack">
+      <p class="sign">Kelly x</p>
+      <p>Any questions over the four weeks, just message me. Small steps every day add up.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
